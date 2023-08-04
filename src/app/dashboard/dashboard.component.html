@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <!-- Total Available Balance Card -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h2 class="card-title text-info">Total Available Balance</h2>
+        <div class="balance">
+          <p class="card-text">Account Balance: ${{ allAccountsBalance }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+        <!-- Checking Account Card -->
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-primary">Checking Account</h2>
+            <div class="balance">
+              <p class="card-text">Account Balance: ${{ accountBalance }}</p>
+            </div>
+            <div class="transaction-history">
+              <h3 class="text-primary">Transaction History</h3>
+              <ul class="list-group">
+                <li *ngFor="let transaction of checkingTransactions" class="list-group-item">
+                  {{ transaction.type }} - ${{ transaction.amount }} - {{ transaction.date | date }}
+                </li>
+              </ul>
+            </div>
+            <div class="actions mt-3">
+              <button class="btn btn-primary" (click)="onWithdrawal('Checking')">Withdrawal (Checking)</button>
+              <button class="btn btn-primary" (click)="onDeposit('Checking')">Deposit (Checking)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <!-- Savings Account Card -->
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-success">Savings Account</h2>
+            <div class="balance">
+              <p class="card-text">Account Balance: ${{ savingsAccountBalance }}</p>
+            </div>
+            <div class="transaction-history">
+              <h3 class="text-success">Transaction History</h3>
+              <ul class="list-group">
+                <li *ngFor="let transaction of savingsTransactions" class="list-group-item">
+                  {{ transaction.type }} - ${{ transaction.amount }} - {{ transaction.date | date }}
+                </li>
+              </ul>
+            </div>
+            <div class="actions mt-3">
+              <button class="btn btn-success" (click)="onWithdrawal('Savings')">Withdrawal (Savings)</button>
+              <button class="btn btn-success" (click)="onDeposit('Savings')">Deposit (Savings)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
