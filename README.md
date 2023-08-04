@@ -1,27 +1,71 @@
-# AtmMachineProject
+# ATM Dashboard App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.7.
+This project is an Angular-based web application that simulates an ATM dashboard. It allows users to view their account balances, transaction history, and perform withdrawals and deposits for both checking and savings accounts.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [ATM Dashboard App](#atm-dashboard-app)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Tecnologies Used](#tecnologies-used)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- View account balances for both checking and savings accounts.
+- View transaction history for both checking and savings accounts.
+- Perform withdrawals and deposits for both checking and savings accounts.
 
-## Build
+## Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Before running this application, make sure you have the following installed:
 
-## Running unit tests
+- [Node.js](https://nodejs.org/) (v12 or higher)
+- [Angular CLI](https://angular.io/cli) (v12 or higher)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+1. Clone the repository:
+git clone https://github.com/your-username/atm-dashboard-app.git
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Navigate to the correct directory:
+cd atm-dashboard-app
 
-## Further help
+3. Install all the dependencies
+npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage
+
+1. Start the Server
+ng serve
+
+2. Open your browser and visit http://localhost:4200/ to access the ATM dashboard app.
+
+## Tecnologies Used
+
+1. Angular: A popular JavaScript framework for building web applications.
+2. TypeScript: A superset of JavaScript that provides static typing and other features.
+3. HTML/CSS: Markup and styling languages for building web pages.
+4. Bootstrap: A CSS framework for designing responsive and visually appealing websites.
+
+## Contributing
+
+Contributions are welcome! 
+If you find any issues or want to enhance the app's functionality, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is intended for study and educational purposes. You are allowed to copy, modify, and use the code solely for learning and improving your development skills. 
+
+Feel free to explore the code, understand the implementation, and experiment with different features. You can use it to practice Angular, TypeScript, and frontend development concepts in general. 
+
+Keep in mind that while this project is permissive for educational purposes, it is important to respect the original authors' efforts and give appropriate credits if you use any part of this code in other projects. Always check the project's license file for specific terms and conditions.
+
+Happy learning and coding! 🚀
+
+
+
