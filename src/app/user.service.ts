@@ -1,5 +1,15 @@
+/*
+  ## UserService
+
+  The `UserService` is a service in an Angular application that provides access to a hardcoded array of user data.
+  This service is responsible for retrieving and managing user information, including their accounts and transaction history.
+
+*/
+
+
 import { Injectable } from '@angular/core';
-import { User } from './authentication.service';
+import { User } from './models/user.model';
+
 
 @Injectable({
   providedIn: 'root'

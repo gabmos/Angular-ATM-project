@@ -1,6 +1,28 @@
+/*
+  ## AuthenticationService
+
+  The `AuthenticationService` is a service in an Angular application that handles user authentication.
+  This service allows users to log in and out, check authentication status, and manage authenticated user information.
+
+  It relies on the `UserService` to retrieve a list of users and perform authentication logic using hardcoded user data.
+
+  ### Methods
+  - `login(username: string, password: string): boolean`: Performs authentication based on provided credentials. Returns true if successful, false otherwise.
+  - `logout(): void`: Clears the authenticated user on logout.
+  - `isAuthenticated(): boolean`: Checks if the user is currently authenticated.
+  - `getAuthenticatedUserName(): string | null`: Returns the name of the authenticated user or null if no user is authenticated.
+  - `getAuthenticatedUser(): User | null`: Returns the authenticated user object or null if no user is authenticated.
+  - `updateAuthenticatedUser(user: User): void`: Updates the authenticated user if needed.
+
+  ### Interfaces
+  - `User`: Represents a user with user-related information, including accounts and transactions.
+  - `Account`: Represents an account associated with a user, containing information such as account type, balance, and transaction history.
+
+*/
+
 import { Injectable } from '@angular/core';
-import { Transaction } from './models/transactional.model';
 import { UserService } from './user.service';
+import { User } from './models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -54,23 +76,4 @@ export class AuthenticationService {
   updateAuthenticatedUser(user: User): void {
     this.authenticatedUser = user;
   }
-}
-
-// Export the User interface.
-export interface User {
-  UserId: number;
-  Name: string;
-  Username: string;
-  Password: string;
-  Accounts: Account[];
-}
-
-// Export the Account interface.
-export interface Account {
-  AccountId: number;
-  UserId: number;
-  DisplayName: string;
-  AccountType: string;
-  CurrentBalance: number;
-  History: Transaction[];
 }

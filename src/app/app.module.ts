@@ -1,3 +1,29 @@
+/*
+  ## AppModule
+
+  The `AppModule` is the root module of the Angular application. It imports various modules and declares components that are part of the application.
+
+  ### Declarations
+  - `AppComponent`: The root component of the application that acts as the entry point.
+  - `LoginComponent`: A component for the login page.
+  - `DashboardComponent`: A component for the dashboard page.
+  - `AccountDetailsComponent`: A component for displaying account details.
+  - `DepositComponent`: A component for the deposit page.
+  - `WithdrawComponent`: A component for the withdraw page.
+
+  ### Imports
+  - `BrowserModule`: A module required for browser-specific functionality.
+  - `AppRoutingModule`: A custom module for routing configuration.
+  - `FormsModule`: A module required for forms-related functionality.
+
+  ### Providers
+  - No specific providers are declared in this module.
+
+  ### Bootstrap
+  - `AppComponent`: The root component that is bootstrapped when the application starts.
+
+*/
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';

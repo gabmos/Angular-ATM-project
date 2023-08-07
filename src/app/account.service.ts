@@ -1,8 +1,26 @@
+/*
+  ## AccountService
+
+  The `AccountService` is a service in an Angular application that provides functionalities related to user accounts and transactions.
+  This service allows users to view account balances, transaction history, deposit funds, and withdraw funds for their Checking and Savings accounts.
+
+  ### Methods
+  - `getTransactionsHistory(accountType: string): Transaction[]`: Fetches the transaction history for a specific account type (Checking or Savings) and converts date strings to Date objects.
+  - `getFullBalance(): number`: Gets the total balance by summing up the balances of the Checking and Savings accounts.
+  - `getCheckingAccountBalance(): number`: Gets the current balance of the Checking account.
+  - `getSavingsAccountBalance(): number`: Gets the current balance of the Savings account.
+  - `withdrawFromChecking(amount: number): void`: Withdraws funds from the Checking account and updates the balance and transaction history.
+  - `withdrawFromSavings(amount: number): void`: Withdraws funds from the Savings account and updates the balance and transaction history.
+  - `depositToChecking(amount: number): void`: Deposits funds to the Checking account and updates the balance and transaction history.
+  - `depositToSavings(amount: number): void`: Deposits funds to the Savings account and updates the balance and transaction history.
+
+*/
+
 import { Injectable } from '@angular/core';
-import { User } from './authentication.service';
 import { Transaction } from './models/transactional.model';
 import { UserService } from './user.service';
 import { AuthenticationService } from './authentication.service';
+import { User } from './models/user.model';
 
 @Injectable({
   providedIn: 'root'
