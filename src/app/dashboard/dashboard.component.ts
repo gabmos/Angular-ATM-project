@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account.service';
 import { Transaction } from '../models/transactional.model';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service'; 
 
 @Component({
   selector: 'app-dashboard',
@@ -14,10 +15,18 @@ export class DashboardComponent implements OnInit {
   allAccountsBalance: number = 0;
   checkingTransactions: Transaction[] = [];
   savingsTransactions: Transaction[] = [];
+  authenticatedUserName: string | null = null; // Variable to store the authenticated user's name
 
-  constructor(private accountService: AccountService, private router: Router) { }
+  constructor(
+    private accountService: AccountService, // Inject the AccountService
+    private authService: AuthenticationService, // Inject the AuthenticationService
+    private router: Router // Inject the Router
+  ) { }
 
   ngOnInit(): void {
+    // Fetch the authenticated user's name and store it in the variable
+    this.authenticatedUserName = this.authService.getAuthenticatedUserName();
+
     this.checkingTransactions = this.accountService.getTransactionsHistory('Checking');
     this.savingsTransactions = this.accountService.getTransactionsHistory('Savings');
     this.accountBalance = this.accountService.getCheckingAccountBalance();

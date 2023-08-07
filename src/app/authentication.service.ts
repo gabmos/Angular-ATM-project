@@ -44,6 +44,16 @@ export class AuthenticationService {
   getAuthenticatedUserName(): string | null {
     return this.authenticatedUser ? this.authenticatedUser.Name : null;
   }
+
+  // Get the authenticated user object
+  getAuthenticatedUser(): User | null {
+    return this.authenticatedUser;
+  }
+
+  // Update the authenticated user (if needed)
+  updateAuthenticatedUser(user: User): void {
+    this.authenticatedUser = user;
+  }
 }
 
 // Export the User interface.

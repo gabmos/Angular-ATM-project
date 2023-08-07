@@ -39,8 +39,72 @@ export class UserService {
         },
       ],
     },
-    // other users and their accounts
+    {
+      UserId: 2,
+      Name: 'Alice',
+      Username: 'alice',
+      Password: '456',
+      Accounts: [
+        {
+          AccountId: 103,
+          UserId: 2,
+          DisplayName: 'Checking Account',
+          AccountType: 'Checking',
+          CurrentBalance: 800,
+          History: [
+            { id: 1, date: new Date('2023-05-03'), amount: 200, type: 'Deposit' },
+            { id: 2, date: new Date('2023-06-02'), amount: 100, type: 'Withdrawal' },
+            { id: 3, date: new Date('2023-07-01'), amount: 300, type: 'Deposit' },
+          ],
+        },
+        {
+          AccountId: 104,
+          UserId: 2,
+          DisplayName: 'Savings Account',
+          AccountType: 'Savings',
+          CurrentBalance: 1500,
+          History: [
+            { id: 4, date: new Date('2023-08-03'), amount: 100, type: 'Deposit' },
+            { id: 5, date: new Date('2023-09-02'), amount: 600, type: 'Withdrawal' },
+            { id: 6, date: new Date('2023-10-01'), amount: 200, type: 'Deposit' },
+          ],
+        },
+      ],
+    },
+    {
+      UserId: 3,
+      Name: 'Bob',
+      Username: 'bob',
+      Password: '789',
+      Accounts: [
+        {
+          AccountId: 105,
+          UserId: 3,
+          DisplayName: 'Checking Account',
+          AccountType: 'Checking',
+          CurrentBalance: 300,
+          History: [
+            { id: 1, date: new Date('2023-05-03'), amount: 50, type: 'Deposit' },
+            { id: 2, date: new Date('2023-06-02'), amount: 20, type: 'Withdrawal' },
+            { id: 3, date: new Date('2023-07-01'), amount: 100, type: 'Deposit' },
+          ],
+        },
+        {
+          AccountId: 106,
+          UserId: 3,
+          DisplayName: 'Savings Account',
+          AccountType: 'Savings',
+          CurrentBalance: 700,
+          History: [
+            { id: 4, date: new Date('2023-08-03'), amount: 30, type: 'Deposit' },
+            { id: 5, date: new Date('2023-09-02'), amount: 200, type: 'Withdrawal' },
+            { id: 6, date: new Date('2023-10-01'), amount: 50, type: 'Deposit' },
+          ],
+        },
+      ],
+    },
   ];
+
 
   constructor() { }
 
