@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account.service';
 import { Transaction } from '../models/transactional.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ export class DashboardComponent implements OnInit {
   checkingTransactions: Transaction[] = [];
   savingsTransactions: Transaction[] = [];
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private router: Router) { }
 
   ngOnInit(): void {
     this.checkingTransactions = this.accountService.getTransactionsHistory('Checking');
@@ -26,9 +27,11 @@ export class DashboardComponent implements OnInit {
 
   onWithdrawal(accountType: string): void {
     // Implement the logic for withdrawal here
+    this.router.navigate(['/withdraw', accountType]);
   }
 
   onDeposit(accountType: string): void {
     // Implement the logic for deposit here
+    this.router.navigate(['/deposit', accountType]);
   }
 }
