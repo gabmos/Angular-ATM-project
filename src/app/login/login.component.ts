@@ -26,20 +26,37 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  showError: boolean = false;
+  errorMessage: string = '';
 
-  constructor(private authService: AuthenticationService, private router: Router) { }
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
 
   onLogin(): void {
-    if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/dashboard']);
-      console.log('Login successful!');
-    } else {
-      console.log('Login failed. Please check your credentials.');
+    this.showError = false;
+    this.errorMessage = '';
+
+    try {
+      if (this.authService.login(this.username, this.password)) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        throw new Error('Login failed. Please check your credentials.');
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        this.showError = true;
+        this.errorMessage = error.message;
+      } else {
+        this.showError = true;
+        this.errorMessage = 'An unknown error occurred.';
+      }
     }
   }
 }

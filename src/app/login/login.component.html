@@ -22,6 +22,7 @@
                 <input type="password" id="password" name="password" [(ngModel)]="password" required class="form-control">
               </div>
               <button type="submit" class="btn btn-primary">Login</button>
+              <div *ngIf="showError" class="text-danger mt-3"> {{ errorMessage }} </div>
             </form>
           </div>
         </div>
